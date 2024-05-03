@@ -1,0 +1,80 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:suite="sap.suite.ui.commons"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.ReportDetail1">
+	<Page
+		title="Inventory Report"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		backgroundDesign="Solid">
+		<content>
+		            <!-- <HBox class='settingsHBox'>
+                    <VBox width="350px">
+                        <Label text = 'Plant Location' design="Bold" class='settingsLabel'></Label>
+                        <Select id='chartTypeSelect' class='settingsSelect' selectedKey='{/chartType/defaultSelected}' maxWidth="300px" change='onChartTypeChanged' 
+                            items="{path: '/chartType/values'}">
+                            <items>
+                                <core:Item text="{type}" key="{key}" />
+                            </items>
+                        </Select>
+                    </VBox>
+                    </HBox> -->
+                
+			<l:Grid defaultSpan="L12 M12 S12"
+				class="sapUiResponsiveMargin"
+				vSpacing="0"
+				hSpacing="0">
+				<suite:ChartContainer
+					title="{
+						parts: [
+							'Inventory Details by Product',
+							'XYZ'
+						],
+						formatter: '.formatMessage'
+					}">
+					<suite:ChartContainerContent
+						icon="sap-icon://vertical-bullet-chart"
+						title="Inventory Chart by Product and Plant">
+						<suite:content>
+							<core:Fragment
+								fragmentName="com.sap.pgp.dev.inventory.fragment.VizChart"
+								type="JS"/>
+						</suite:content>
+					</suite:ChartContainerContent>
+					<suite:ChartContainerContent
+						icon="sap-icon://table-chart"
+						title="Table With Inventory Data">
+						<suite:content>
+							<Table items="{/Temperatures}">
+								<columns>
+									<Column>
+										<Text text="Icecream"/>
+									</Column>
+									<Column>
+										<Text text="Temperature"/>
+									</Column>
+									<Column>
+										<Text text="TargetTemperature"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{id}"/>
+											<Text text="{temperature}"/>
+											<Text text="{target}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</suite:content>
+					</suite:ChartContainerContent>
+				</suite:ChartContainer>
+			</l:Grid>
+		</content>
+	</Page>
+</mvc:View>
+

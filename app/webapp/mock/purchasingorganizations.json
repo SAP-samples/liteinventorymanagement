@@ -1,0 +1,796 @@
+[
+  { 
+    "realm": "nimbus4",
+    "purchasingOrgs": [
+      {
+        "BUKRS": "",
+        "EKORG": 2021,
+        "EKOTX": "NL Purchase Org.",
+        "PurchasingUnit": ""
+      },
+      {
+        "BUKRS": "",
+        "EKORG": 2088,
+        "EKOTX": "AAIS BV",
+        "PurchasingUnit": ""
+      },
+      {
+        "BUKRS": 1000,
+        "EKORG": 1000,
+        "EKOTX": "Purchasing Organization",
+        "PurchasingUnit": "Sweden"
+      },
+      {
+        "BUKRS": "DK01",
+        "EKORG": "DK01",
+        "EKOTX": "LEGO Global Purchasing Organization",
+        "PurchasingUnit": "DK01_PU"
+      },
+      {
+        "BUKRS": "Sweden",
+        "EKORG": "Sweden",
+        "EKOTX": "Sweden",
+        "PurchasingUnit": "Sweden"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE30000",
+        "EKOTX": "BE30000 - Europe & Brazil Manufacturing",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM40000",
+        "EKOTX": "BM40000 - Europe North and Russia",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12800",
+        "EKOTX": "AA12800 - Group Trucks Strategy",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK50000",
+        "EKOTX": "BK50000 - Volvo Trucks International",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE13000",
+        "EKOTX": "BE13000 - Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BE20300",
+        "EKOTX": "BE20300 - Quality & Environmental",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM18000",
+        "EKOTX": "BM18000 - Retail Development",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE10000",
+        "EKOTX": "BE10000 - Group Trucks Operations",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA10100",
+        "EKOTX": "AA10100 - CEO Business Office",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL11000",
+        "EKOTX": "BL11000 - Human Resources",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE15000",
+        "EKOTX": "BE15000 - Process and IT",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM15000",
+        "EKOTX": "BM15000 - RT Product and Sales Support",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK16000",
+        "EKOTX": "BK16000 - Services and Customer Quality",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "BA10000",
+        "EKOTX": "BA10000 - Group Trucks Asia & JVs",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA11700",
+        "EKOTX": "AA11700 - HR Staff & Support Function",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL16000",
+        "EKOTX": "BL16000 - Uptime",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI70000",
+        "EKOTX": "BI70000 - Indirect product and services PU",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI14000",
+        "EKOTX": "BI14000 - Legal",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM12000",
+        "EKOTX": "BM12000 - Business Control",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK13000",
+        "EKOTX": "BK13000 - Brand & Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA14200",
+        "EKOTX": "AA14200 - Corporate Legal",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL13000",
+        "EKOTX": "BL13000 - Communications",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BI40000",
+        "EKOTX": "BI40000 - North America Purchasing",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE27",
+        "EKORG": "BF12400",
+        "EKOTX": "BF12400 - Powertrain Engineering Control",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN40000",
+        "EKOTX": "BN40000 - Japan Sales",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI11000",
+        "EKOTX": "BI11000 - Human Ressources",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12000",
+        "EKOTX": "AA12000 - Group Finance",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM10000",
+        "EKOTX": "BM10000 - Renault Trucks",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK10000",
+        "EKOTX": "BK10000 - Volvo Trucks",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13820",
+        "EKOTX": "AA13820 - Brand Portfolio Management",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI20000",
+        "EKOTX": "BI20000 - Powertrain Europe",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF12100",
+        "EKOTX": "BF12100 - Business Control",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN16000",
+        "EKOTX": "BN16000 - Brand Communications and Product",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF70000",
+        "EKOTX": "BF70000 - Vehicle Engineering",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13400",
+        "EKOTX": "AA13400 - Internal Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BF12700",
+        "EKOTX": "BF12700 - Cost Engineering/Product Cost",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK20000",
+        "EKOTX": "BK20000 - Volvo Trucks Europe",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE11000",
+        "EKOTX": "BE11000 - Human Resources",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "CF10000",
+        "EKOTX": "CF10000 - Governmental Sales",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12600",
+        "EKOTX": "AA12600 - Investor Relations",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE90000",
+        "EKOTX": "BE90000 - International Manufacturing",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN11000",
+        "EKOTX": "BN11000 - Human Resources",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BF40000",
+        "EKOTX": "BF40000 - Technology Product Project",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13000",
+        "EKOTX": "AA13000 - Group Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "DG10000",
+        "EKOTX": "DG10000 - Volvo Group University",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL18000",
+        "EKOTX": "BL18000 - Commercial Support",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI15000",
+        "EKOTX": "BI15000 - Business Office & IT",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BK14000",
+        "EKOTX": "BK14000 - Legal",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA14300",
+        "EKOTX": "AA14300 - Corporate Security",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA11200",
+        "EKOTX": "AA11200 - Culture Development & Talent Management",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL14000",
+        "EKOTX": "BL14000 - Legal (Volvo & Mack)",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BI50000",
+        "EKOTX": "BI50000 - Japan - China - Australia Purchasing",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BF12500",
+        "EKOTX": "BF12500 - Range & Project Control",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BK30000",
+        "EKOTX": "BK30000 - Volvo Trucks North America",
+        "PurchasingUnit": "Custom"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI12000",
+        "EKOTX": "BI12000 - Controlling",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK12000",
+        "EKOTX": "BK12000 - Business Control & Strategy",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA14000",
+        "EKOTX": "AA14000 - Group Legal & Compliance",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN10000",
+        "EKOTX": "BN10000 - UD Trucks",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12900",
+        "EKOTX": "AA12900 - Rossared Mansion",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF12200",
+        "EKOTX": "BF12200 - Vehicle Engineering Control",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN15000",
+        "EKOTX": "BN15000 - Process and Solution",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE27",
+        "EKORG": "BF80000",
+        "EKOTX": "BF80000 - Quality and Customer Satisfaction",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13500",
+        "EKOTX": "AA13500 - CSR Management",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM30000",
+        "EKOTX": "BM30000 - Europe South Sales",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE12000",
+        "EKOTX": "BE12000 - Controlling & Business Office",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12500",
+        "EKOTX": "AA12500 - Group Treasury & Corporate Finance",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF10000",
+        "EKOTX": "BF10000 - Group Trucks Technology",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BF50000",
+        "EKOTX": "BF50000 - Complete Vehicle",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA11100",
+        "EKOTX": "AA11100 - Workforce Management",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13300",
+        "EKOTX": "AA13300 - Corporate Brand Events",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM17000",
+        "EKOTX": "BM17000 - Aftermarket",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE60000",
+        "EKOTX": "BE60000 - Powertrain Production",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF15000",
+        "EKOTX": "BF15000 - Process and IT",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA10000",
+        "EKOTX": "AA10000 - Volvo Group",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL10000",
+        "EKOTX": "BL10000 - Mack Trucks",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM14000",
+        "EKOTX": "BM14000 - Legal",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA11300",
+        "EKOTX": "AA11300 - Compensation & Benefits",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BE20700",
+        "EKOTX": "BE20700 - VPS",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM11000",
+        "EKOTX": "BM11000 - Human Resources",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL12000",
+        "EKOTX": "BL12000 - Business Control",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE18000",
+        "EKOTX": "BE18000 - Quality & Engineering",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BI30000",
+        "EKOTX": "BI30000 - Vehicle Europe",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK17000",
+        "EKOTX": "BK17000 - Retail Development",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "IN01",
+        "EKORG": "BA30000",
+        "EKOTX": "BA30000 - Technology",
+        "PurchasingUnit": "India_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN30000",
+        "EKOTX": "BN30000 - Operations",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI10000",
+        "EKOTX": "BI10000 - Group Trucks Purchasing",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BI80000",
+        "EKOTX": "BI80000 - Uptime - Adaptation & Synergies",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13700",
+        "EKOTX": "AA13700 - Group Relations & Partnerships",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF14000",
+        "EKOTX": "BF14000 - Legal & Volvo Group IP",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12700",
+        "EKOTX": "AA12700 - Group Strategy",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM13000",
+        "EKOTX": "BM13000 - Brand and Communication",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF11000",
+        "EKOTX": "BF11000 - Human Resources",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF60000",
+        "EKOTX": "BF60000 - Powertrain Engineering",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA13200",
+        "EKOTX": "AA13200 - Communication Development",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN50000",
+        "EKOTX": "BN50000 - International Sales",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA12400",
+        "EKOTX": "AA12400 - Group Reporting Tax & Control",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL19000",
+        "EKOTX": "BL19000 - Special Projects",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE70000",
+        "EKOTX": "BE70000 - Production Logistics",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "BF17000",
+        "EKOTX": "BF17000 - CTO Office",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BI17000",
+        "EKOTX": "BI17000 - Innovative Purchasing",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN20000",
+        "EKOTX": "BN20000 - Technology",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BE22000",
+        "EKOTX": "BE22000 - N Am Manufacturing New River Valley",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF13000",
+        "EKOTX": "BF13000 - Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "BR03",
+        "EKORG": "BK40000",
+        "EKOTX": "BK40000 - Volvo Trucks Latin America",
+        "PurchasingUnit": "Brazil_PU"
+      },
+      {
+        "BUKRS": "JP40",
+        "EKORG": "BN12000",
+        "EKOTX": "BN12000 - Business Office",
+        "PurchasingUnit": "Japan_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BE20100",
+        "EKOTX": "BE20100 - HR",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK18000",
+        "EKOTX": "BK18000 - Transformation Office & Strategy VT 2.0",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "IN01",
+        "EKORG": "BA40000",
+        "EKOTX": "BA40000 - Purchasing",
+        "PurchasingUnit": "India_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM50000",
+        "EKOTX": "BM50000 - International Sales",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BE14000",
+        "EKOTX": "BE14000 - Legal",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK15000",
+        "EKOTX": "BK15000 - Product and Vehicle Sales",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA14400",
+        "EKOTX": "AA14400 - Corporate Audit",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "US10",
+        "EKORG": "BL15000",
+        "EKOTX": "BL15000 - Retail Development",
+        "PurchasingUnit": "USA_PU"
+      },
+      {
+        "BUKRS": "SE27",
+        "EKORG": "BI60000",
+        "EKOTX": "BI60000 - SQ&D Europe",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM20000",
+        "EKOTX": "BM20000 - France",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BI13000",
+        "EKOTX": "BI13000 - Communication",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BK11000",
+        "EKOTX": "BK11000 - Human Resources",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA14100",
+        "EKOTX": "AA14100 - Corporate Compliance",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "SE01",
+        "EKORG": "AA11000",
+        "EKOTX": "AA11000 - Group Human Resources",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "FR46",
+        "EKORG": "BM16000",
+        "EKOTX": "BM16000 - Used Trucks",
+        "PurchasingUnit": "France_PU"
+      },
+      {
+        "BUKRS": "SE26",
+        "EKORG": "BF12300",
+        "EKOTX": "BF12300 - Complete Vehicle Control",
+        "PurchasingUnit": "Sweden_PU"
+      },
+      {
+        "BUKRS": "BE01",
+        "EKORG": "BE01",
+        "EKOTX": "Umicore Purchasing Organization",
+        "PurchasingUnit": "BE01_PU"
+      }
+    ]
+  },
+  { 
+    "realm": "SandboxAtlantic-T",
+    "purchasingOrgs": [
+      {
+        "BUKRS": 1710,
+        "EKORG": 1710,
+        "EKOTX": "Purch. Org. 1710",
+        "PurchasingUnit": ""
+      },
+      {
+        "BUKRS": 1710,
+        "EKORG": "USPO",
+        "EKOTX": "S4 Hana Pur Org",
+        "PurchasingUnit": ""
+      }
+    ]
+  },
+  { 
+    "realm": "StratusMedio",
+    "purchasingOrgs": [
+    ]
+  },
+  { 
+    "realm": "cirrusatlanticsuite",
+    "purchasingOrgs": [
+    ]
+  }
+]

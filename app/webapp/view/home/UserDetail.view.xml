@@ -1,0 +1,318 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:tnt="sap.tnt"
+	xmlns:plugins="sap.ui.table.plugins"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.UserDetail"
+	height="100%">
+	<m:Page title="User Profile"
+            class="sapUiContentPadding"
+            backgroundDesign="Transparent"
+            showHeader="true"
+            showNavButton="true"
+            navButtonPress="onNavBack">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" > 
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+						<expandedHeading>
+							<m:Title text="{products>FirstName} {products>LastName}" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</expandedHeading>
+						<actions>
+							<m:Button
+									id="ebutton"
+									text="Edit"
+									type="Emphasized"
+									press="toggleAreaPriority"
+									visible = "true"/>
+							<m:Button
+							        id="sbutton"
+									text="Save"
+									type="Emphasized"
+									press="OnPressSave"
+									visible = "false"/>
+							<m:Button
+							        id="cbutton"
+									text="Cancel"
+									type="Emphasized"
+									press="OnPressCancel"
+									visible = "false"/>
+							<m:Button
+									icon="sap-icon://action"
+									type="Transparent"/>
+						</actions> 
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+				<m:Avatar src="./img/ProfileImage.png" backgroundColor="Random" displaySize="L" class="sapUiTinyMarginEnd"/>
+
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="{i18n>header}">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<f:Form id="frmRequisition" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout
+										labelSpanXL="4"
+										labelSpanL="4"
+										labelSpanM="12"
+										labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="0"
+										emptySpanL="0"
+										emptySpanM="0"
+										emptySpanS="0"
+										columnsXL="2"
+										columnsL="2"
+										columnsM="1"
+										singleContainerFullSize="false" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="{i18n>company}">
+										<f:formElements>
+											<f:FormElement visible="true">
+												<f:label>
+													<m:Label
+														text="First Name"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="FnName"
+														type="Text"
+														editable ="false"
+														value="{products>FirstName}"
+														change= "onChange"
+														placeholder="Name" />
+												</f:fields>
+											</f:FormElement>
+	
+										<f:FormElement visible="true">
+												<f:label>
+													<m:Label
+														text="Last Name"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="LnName"
+														type="Text"
+														editable ="false"
+														value="{products>LastName}"
+														change= "onChange"
+														placeholder="LnName" />
+												</f:fields>
+											</f:FormElement>
+										
+											<f:FormElement visible="true">
+												<f:label>
+													<m:Label
+														text="Employee ID"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="EmpID"
+														type="Text"
+														editable ="false"
+														value="{products>EmployeeID}"
+														change= "onChange"
+														placeholder="EmpID" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="CCode1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Company Code"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="CompCode"
+														type="Text"
+														editable ="false"
+														value="{products>CompanyCode}"
+														change= "onChange"
+														placeholder="CompCode" />
+														
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="CCode2" visible="false"> 
+												<f:label>
+													<m:Label
+														text="Default Company Code"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:ComboBox
+														id="CCodeCB"
+														selectedKey="{products>CompanyCode}"
+														placeholder="{i18n>companyCode}"
+														items="{
+															path: 'compCodes>/',
+															sorter: { path: 'compCodes>BUTXT' }
+														}"
+														required="true"
+														change="changeCompCode">
+														<core:Item key="{compCodes>BUKRS}" text="{compCodes>BUTXT}" />
+													</m:ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="CC1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Cost Center"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="CostCC"
+														type="Text"
+														editable ="false"
+														value="{products>CostCenter}"
+														change= "onChange"
+														placeholder="CostCC" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="CC2" visible="false">
+												<f:label>
+													<m:Label
+														text="Default Cost Center"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="CostCC2"
+														type="Text"
+														editable ="true"
+														value="{products>CostCenter}"
+														change= "onChange"
+														placeholder="CostCC2" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="PORG1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Purchasing Org"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="POrg1"
+														type="Text"
+														editable ="false"
+														value="{products>PurchOrg}"
+														change= "onChange"
+														placeholder="POrg1" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="PORG2" visible="false">
+												<f:label>
+													<m:Label
+														text="Default Purchasing Org"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="POrg2"
+														type="Text"
+														editable ="true"
+														value="{products>PurchOrg}"
+														change= "onChange"
+														placeholder="POrg2" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="GL1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default GL Account"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="GLAccount1"
+														type="Text"
+														editable ="false"
+														value="{products>GLAccount}"
+														change= "onChange"
+														placeholder="GLAccount1" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="GL2" visible="false">
+												<f:label>
+													<m:Label
+														text="Default GL Account"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="GLAccount2"
+														type="Text"
+														editable ="true"
+														value="{products>GLAccount}"
+														change= "onChange"
+														placeholder="GLAccount2" />
+												</f:fields>
+											</f:FormElement>
+
+
+										<f:FormElement id="LocationFE1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Location"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="Location1"
+														type="Text"
+														editable ="false"
+														value="{products>Location}"
+														change= "onChange"
+														placeholder="Location1" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="LocationFE2" visible="false">
+												<f:label>
+													<m:Label
+														text="Default Location"
+														required="true"/>
+												</f:label>
+												<f:fields>
+												  <m:ComboBox
+														id="LocationCB"
+														selectedKey="{products>Location}"
+														placeholder="Location CB"
+														items="{
+															path: 'plantsModel>/',
+															sorter: { path: 'plantsModel>NAME' }
+														}"
+														required="true"
+														change="changeCompCode">
+														<core:Item key="{plantsModel>WERKS}" text="{plantsModel>NAME}" />
+													</m:ComboBox>
+												</f:fields>
+											</f:FormElement>
+
+
+
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+		</sections>
+	</ObjectPageLayout>
+	<layout:HorizontalLayout id="staticContentLayout">
+	</layout:HorizontalLayout>
+	</m:Page>
+</mvc:View>

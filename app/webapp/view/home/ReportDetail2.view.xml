@@ -1,0 +1,101 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:suite="sap.suite.ui.commons"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.ReportDetail2">
+	<Page
+		title="Inventory Report"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		backgroundDesign="Solid">
+		<content>
+
+
+		             <!-- <HBox class='settingsHBox'>
+                    <VBox width="350px">
+                        <Label text = 'Plant Location' design="Bold" class='settingsLabel'></Label>
+                    																<m:ComboBox
+														id="PlantCB"
+														placeholder="{i18n>companyCode}"
+														items="{
+															path: 'compCodes>/',
+															sorter: { path: 'plantCodes>NAME' }
+														}"
+														required="true"
+														change="changeCompCode">
+														<core:Item key="{plantCodes>WERKS}" text="{plantCodes>NAME}" />
+													</m:ComboBox>
+                    </VBox>
+                    </HBox>  -->
+
+
+
+			<l:Grid defaultSpan="L12 M12 S12"
+				class="sapUiResponsiveMargin"
+				vSpacing="0"
+				hSpacing="0">
+				<Label text = 'Plant Location' design="Bold" class='settingsLabel'></Label>
+                <ComboBox
+														id="PlantCB"
+														placeholder="{i18n>companyCode}"
+														items="{
+															path: 'plantCodes>/',
+															sorter: { path: 'plantCodes>NAME' }
+														}"
+														required="true"
+														change="changePlantCode">
+														<core:Item key="{plantCodes>WERKS}" text="{plantCodes>NAME}" />
+													</ComboBox>
+				<suite:ChartContainer
+					title="{
+						parts: [
+							'Inventory Details by Product',
+							'XYZ'
+						],
+						formatter: '.formatMessage'
+					}">
+					<suite:ChartContainerContent
+						icon="sap-icon://vertical-bullet-chart"
+						title="Inventory Chart by Product and Plant">
+						<suite:content>
+							<core:Fragment 
+								fragmentName="com.sap.pgp.dev.inventory.fragment.VizChart2"
+								type="JS"/>
+						</suite:content>
+					</suite:ChartContainerContent>
+					<suite:ChartContainerContent
+						icon="sap-icon://table-chart"
+						title="Table With Inventory Data">
+						<suite:content>
+							<Table items="{products>/results}">
+								<columns>
+									<Column>
+										<Text text="Products"/>
+									</Column>
+									<Column>
+										<Text text="Available Quantity"/>
+									</Column>
+									<Column>
+										<Text text="Restock Quantity"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{products>ProductDesc}"/>
+											<Text text="{products>StockQAvailable}"/>
+											<Text text="{products>ReorderPoint}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</suite:content>
+					</suite:ChartContainerContent>
+				</suite:ChartContainer>
+			</l:Grid>
+		</content>
+	</Page>
+</mvc:View>
+

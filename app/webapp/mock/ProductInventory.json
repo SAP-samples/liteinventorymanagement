@@ -1,0 +1,61 @@
+{
+    "ProductCollection": [
+      {
+        "ProductId": "MZ-PROC-IT-IP-0032",
+        "Plant": "1710",
+        "PlantDesc":"Texas",
+        "StorageLocation": "171A",
+        "StorageDesc":"Dallas",
+        "ProductDesc": "Apple iPhone 6 - 256 GB",
+        "Supplier": "USSU1010",
+        "SupplierName" : "Thompson Supplies Inc",
+        "SupplierPartNo" : "SM-101000",
+        "UnitPrice" : "599.99",
+        "Currency" : "USD",
+        "StockQAvailable" : "10",
+        "UOM" : "EA",
+        "ManufacturerName" : "Apple",
+        "Language" : "EN",
+        "ProductPicUrl": "./img/iphone7.jpg"
+        
+      },
+      {
+        "ProductId": "MZ-PROC-IT-IP-0034",
+        "Plant": "1711",
+        "PlantDesc":"California",
+        "StorageLocation": "171C",
+        "StorageDesc":"Cupertino",
+        "ProductDesc": "Apple iPhone 7 - 256 GB",
+        "Supplier": "USSU1010",
+        "SupplierName" : "GRAM Supplies Inc",
+        "SupplierPartNo" : "GR-101000",
+        "UnitPrice" : "799.99",
+        "Currency" : "USD",
+        "StockQAvailable" : "10",
+        "UOM" : "EA",
+        "ManufacturerName" : "Apple",
+        "Language" : "EN",
+        "ProductPicUrl": "./img/iphone7.jpg"
+        
+      },
+      {
+        "ProductId": "MZ-PROC-IT-IP-1024",
+        "Plant": "1712",
+        "PlantDesc":"Texas",
+        "StorageLocation": "171B",
+        "StorageDesc":"Plano",
+        "ProductDesc": "Apple iPhone 8 - 256 GB",
+        "Supplier": "USSU1010",
+        "SupplierName" : "GRAM Supplies Inc",
+        "SupplierPartNo" : "GR-101011",
+        "UnitPrice" : "899.99",
+        "Currency" : "USD",
+        "StockQAvailable" : "10",
+        "UOM" : "EA",
+        "ManufacturerName" : "Apple",
+        "Language" : "EN",
+        "ProductPicUrl": "./img/iphone7.jpg"
+        
+      }
+    ]
+  }

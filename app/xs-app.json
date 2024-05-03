@@ -1,0 +1,21 @@
+{
+  "welcomeFile": "/invapp/index.html",
+  "authenticationMethod": "none",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/backend/(.*)",
+      "target": "$1",
+      "authenticationType": "none",
+      "destination": "backend"
+    },
+    {
+      "source": "^/invapp/(.*)$",
+      "target": "$1",
+      "localDir": "webapp",
+      "authenticationType": "none"
+    }
+  ]
+}

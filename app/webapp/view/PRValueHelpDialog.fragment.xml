@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Purchase Requisitions"
+		items="{requisitions>/results}"
+		search=".onValueHelpPRDialogSearch"
+		confirm=".onValuePRHelpDialogClose"
+		cancel=".onValuePRHelpDialogClose">
+		<StandardListItem
+			title="{requisitions>PRID}"
+			description="({requisitions>ProductId}){requisitions>ProductDesc}"
+			info = "Plant:{requisitions>PlantID}"
+			wrapping="true" />
+
+	</SelectDialog>
+</core:FragmentDefinition>

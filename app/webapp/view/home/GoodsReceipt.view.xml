@@ -1,0 +1,213 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:tnt="sap.tnt"
+	xmlns:plugins="sap.ui.table.plugins"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.GoodsReceipt"
+	height="100%">
+	<m:Page title="Goods Receipt"
+            class="sapUiContentPadding"
+            backgroundDesign="Transparent"
+            showHeader="true"
+            showNavButton="true"
+            navButtonPress="onNavBack">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" > 
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+						<expandedHeading>
+							<m:Title text="Receive Incoming Product to Inventory" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</expandedHeading>
+						<actions>
+							<m:Button
+							        id="sbutton"
+									text="Receive Product"
+									type="Emphasized"
+									press="OnPressSave"
+									visible = "true"/>
+							<m:Button
+							        id="cbutton"
+									text="Cancel"
+									type="Emphasized"
+									press="OnPressCancel"
+									visible = "true"/>
+							<m:Button
+									icon="sap-icon://action"
+									type="Transparent"/>
+						</actions> 
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Goods Receipt">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<f:Form id="frmRequisition" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout
+										labelSpanXL="4"
+										labelSpanL="4"
+										labelSpanM="12"
+										labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="0"
+										emptySpanL="0"
+										emptySpanM="0"
+										emptySpanS="0"
+										columnsXL="2"
+										columnsL="2"
+										columnsM="1"
+										singleContainerFullSize="false" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="">
+									
+										<f:formElements>
+										<!-- <f:FormElement id="PR1" visible="true">
+												<f:label>
+													<m:Label
+														text="SAP Ariba PR"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="PRINP1"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="SAP Ariba Purchase Requisition" />
+												</f:fields>
+											</f:FormElement> -->
+
+											<f:FormElement id="requisitionfe" visible="true">
+												<f:label>
+													<m:Label
+														text="Requisition"
+														required="true"/>
+												</f:label>
+												<f:fields>
+											<m:Input
+														id="RequisitionInput"
+														textFormatMode="KeyValue"
+														placeholder="Choose Requisition"
+														showSuggestion="true"
+														showValueHelp="true"
+														valueHelpRequest=".onPRValueHelpRequest"
+														suggestionItems="{requisitions>/results}"
+														suggestionItemSelected=".onSuggestionItemSelected1">
+														<m:suggestionItems>
+															<core:ListItem
+																key="{requisitions>PRID}"
+																text="{requisitions>ProductDesc}"
+																additionalText="{requisitions>ProductDesc}" />
+														</m:suggestionItems>
+													</m:Input>
+													<m:Text id="selectedKeyIndicator1" />
+
+												</f:fields>
+											</f:FormElement>
+
+											<f:FormElement id="LocationFE1" visible="false">
+												<f:label>
+													<m:Label
+														text="Delivery Location"
+														required="true"/>
+												</f:label>
+												<f:fields>
+												  <!-- <m:ComboBox
+														id="LocationCB"
+														placeholder="Receiving Location"
+														items="{
+															path: 'plantsModel>/',
+															sorter: { path: 'plantsModel>NAME' }
+														}"
+														required="true"
+														change="changePlantCode">
+														<core:Item key="{plantsModel>WERKS}" text="{plantsModel>NAME}" />
+													</m:ComboBox> -->
+													<m:Text id="selectedLocationKey" />
+												</f:fields>
+											</f:FormElement>
+
+											<f:FormElement id="Productfe" visible="false">
+												<f:label>
+													<m:Label
+														text="Product"
+														required="true"/>
+												</f:label>
+												<f:fields>
+											<!-- <m:Input
+														id="productInput"
+														textFormatMode="KeyValue"
+														placeholder="Enter product"
+														showSuggestion="true"
+														showValueHelp="true"
+														valueHelpRequest=".onValueHelpRequest"
+														suggestionItems="{products1>/results}"
+														suggestionItemSelected=".onSuggestionItemSelected">
+														<m:suggestionItems>
+															<core:ListItem
+																key="{products1>ProductId}"
+																text="{products1>ProductDesc}"
+																additionalText="{products1>ProductId}" />
+														</m:suggestionItems>
+													</m:Input> -->
+													<m:Text id="selectedKeyIndicator" />
+
+												</f:fields>
+											</f:FormElement>
+											
+											<!-- <f:FormElement id="PO1" visible="true">
+												<f:label>
+													<m:Label
+														text="SAP Ariba PO"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="POINP1"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="SAP Ariba PO for the Receipt" />
+												</f:fields>
+											</f:FormElement> -->
+										<f:FormElement id="Quantityfe" visible="false">
+												<f:label>
+													<m:Label
+														text="Quantity Received"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="Quantity"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														width = "100px"
+														placeholder="Input Qty.." />
+												</f:fields>
+											</f:FormElement>
+
+
+
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+		</sections>
+	</ObjectPageLayout>
+	<layout:HorizontalLayout id="staticContentLayout">
+	</layout:HorizontalLayout>
+	</m:Page>
+</mvc:View>

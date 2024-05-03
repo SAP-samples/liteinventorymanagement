@@ -1,0 +1,15 @@
+
+[
+  {
+    "BUKRS": 1710,
+    "BUTXT": "1710-SAP America",
+    "PurchasingUnit": "",
+    "FSTVA": "0010"
+  },
+  {
+      "BUKRS": 1720,
+      "BUTXT": "1720-SAP Germany",
+      "PurchasingUnit": "",
+      "FSTVA": "0010"
+  } 
+]

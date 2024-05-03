@@ -1,0 +1,131 @@
+<mvc:View
+        controllerName="com.sap.pgp.dev.inventory.controller.home.InventoryDetails"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:t="sap.ui.table"
+        xmlns="sap.m"
+        xmlns:f="sap.f"
+        xmlns:core="sap.ui.core"
+        xmlns:grid="sap.ui.layout.cssgrid">
+    <Page
+            title="Inventory Detail"
+            class="sapUiContentPadding"
+            backgroundDesign="Transparent"
+            showHeader="true"
+            showNavButton="true"
+            navButtonPress="onNavBack">
+
+        <!-- <content>
+        	<t:Table id="table"
+				selectionMode="MultiToggle"
+				rows="{/ProductCollection}"
+				visibleRowCount="7"
+				sort="sortDeliveryDate"
+				ariaLabelledBy="title"> 
+            <t:columns>
+					<t:Column
+						id="name"
+						width="11rem"
+						sortProperty="Name">
+						<Label text="Product Name" />
+						<t:template>
+							<Text text="{Name}" wrapping="false" />
+						</t:template>
+					</t:Column>
+						<t:Column
+						id="categories"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Category">
+						<Label text="Category" />
+						<t:template>
+							<Text text="{Category}" wrapping="false" />
+						</t:template>
+					</t:Column>
+				</t:columns>           
+            </t:Table>
+        </content> -->
+
+<content>
+        	<t:Table id="grtable"
+				selectionMode="Single"
+				rows="{products>Products2Plants}"
+				rowActionCount="1"
+				visibleRowCount="7"
+				sort="sortDeliveryDate"
+				enableColumnFreeze="true"
+				ariaLabelledBy="title"> 
+            <t:columns>
+					<t:Column
+						id="Plants_ID"
+						width="11rem"
+						sortProperty="Plants_ID">
+						<Label text="Inventory Location ID" />
+						<t:template>
+							<Text text="{products>Plants_Plant}" wrapping="false" />
+						</t:template>
+					</t:Column>
+						<t:Column
+						id="Plants_Desc"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Plants_Desc">
+						<Label text="Inventory Location" />
+						<t:template>
+							<Text text="{products>plantdescription}" wrapping="false" />
+						</t:template>
+					</t:Column>
+                   <t:Column
+						id="Plants_Stock"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Plants_Stock">
+						<Label text="Stock Availability" />
+						<t:template>
+							<Text text="{products>StockQAvailable}" wrapping="false" />
+						</t:template>
+					</t:Column>
+
+                   <t:Column
+						id="Plants_Supplier"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Plants_Supplier">
+						<Label text="Supplier ID" />
+						<t:template>
+							<Text text="{products>Supplier}" wrapping="false" />
+						</t:template>
+					</t:Column>
+                  
+				  	<t:Column width="6rem" hAlign="Center">
+						<Label text="Status" />
+						<t:template>
+						<Text text="{products>AvailabilityStatus}" wrapping="false" />
+						</t:template>
+					</t:Column>
+
+                   <t:Column
+						id="Plants_SupplierName"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Plants_SupplierName">
+						<Label text="Supplier Name" />
+						<t:template>
+							<Text text="{products>SupplierName}" wrapping="false" />
+						</t:template>
+					</t:Column>
+				</t:columns>           
+
+				<t:rowActionTemplate>
+					<t:RowAction>
+						<t:items>
+					<t:RowActionItem type="Navigation" press="onDetailsPress" icon="sap-icon://feeder-arrow"></t:RowActionItem>
+					</t:items>
+				</t:RowAction>
+				</t:rowActionTemplate>
+
+
+            </t:Table>
+        </content>
+
+    </Page>
+</mvc:View>

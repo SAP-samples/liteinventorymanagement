@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Products"
+		items="{products1>/results}"
+		search=".onValueHelpDialogSearch"
+		confirm=".onValueHelpDialogClose"
+		cancel=".onValueHelpDialogClose">
+		<StandardListItem
+			icon="{products1>ProductPicUrl}"
+			iconDensityAware="false"
+			iconInset="false"
+			title="{products1>ProductDesc}"
+			description="{products1>ProductId}" />
+	</SelectDialog>
+</core:FragmentDefinition>

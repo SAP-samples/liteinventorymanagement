@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Employee"
+		items="{Employee>/EmployeeCollection}"
+		search=".onValueHelpDialogSearch1"
+		confirm=".onValueHelpDialogClose1"
+		cancel=".onValueHelpDialogClose1">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false"
+			title="{Employee>Name}"
+			description="{Employee>EmployeeID}" />
+	</SelectDialog>
+</core:FragmentDefinition>

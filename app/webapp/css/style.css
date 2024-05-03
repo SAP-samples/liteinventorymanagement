@@ -1,0 +1,62 @@
+/* Enter your custom styles here */
+.fullHeight {
+    height: 300px;
+    width: 300px;
+}
+
+.welcomeCarouselText {
+	color: white;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	padding: 1rem;
+	font-size: 1.5rem;
+	width: 100%;
+	text-shadow: 0 0 0.125rem black;
+}
+
+.maxHeight	{
+	max-height: 435px;
+}
+
+header:not(.sapUxAPObjectPageHeaderStickied) .white .sapMBtnIconLeft	{
+	color: white !important;
+}
+
+.solidwBackground .sapMTitle	{
+	color: white !important;
+}
+
+.solidblack .sapMTitle	{
+	color: black !important;
+}
+.solidBackground	{
+	background: #354A5F !important;
+}
+
+.gsolidfBackground	{
+	background: url('../img/InventorManagementv3.jpg') !important
+}
+.g2solidfBackground	{
+	background: url('../img/InventorManagementv3.jpg') !important
+}
+.sapUxAPObjectPageScroll .sapFDynamicPageHeader, 
+.sapUxAPObjectPageHeaderStickied .gsolidBackground	{
+	background: url('../img/InventorManagement3.jpg') !important
+}
+
+.topDesign {
+	background: url('../img/header-top.png') !important;
+}
+
+.bottomDesign	{
+	background: url('../img/header-bottom.png') !important;
+}
+
+.ButtonHome div.sapMBtnInner {
+	height: 100px;
+}
+
+  .item {
+	width: 80px;
+  }

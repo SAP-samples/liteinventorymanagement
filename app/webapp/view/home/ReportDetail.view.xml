@@ -1,0 +1,85 @@
+<mvc:View
+	xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:suite="sap.suite.ui.commons"
+    xmlns:core="sap.ui.core" xmlns:viz.data="sap.viz.ui5.data" height="100%"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.ReportDetail">
+	<Page
+		title="Inventory Management - Report"
+		backgroundDesign="Solid"
+		showHeader="true"
+		showNavButton="true"
+        navButtonPress="onNavBack">
+<content>
+
+			 <layout:FixFlex id='chartFixFlex' minFlexSize="250">
+        <!--Below is the setting panel -->
+        <layout:fixContent>
+            <Panel id='settingsPanel' class="panelStyle" expandable="true" expanded="true" headerText="Settings" width="auto">
+                <content>
+                    <!-- <HBox class='settingsHBox'>
+                    <VBox width="350px">
+                        <Label text = 'Location' design="Bold" class='settingsLabel'></Label>
+                        <Select id='chartTypeSelect' class='settingsSelect' selectedKey='{/chartType/defaultSelected}' maxWidth="300px" change='onChartTypeChanged' 
+                            items="{path: '/chartType/values'}">
+                            <items>
+                                <core:Item text="{type}" key="{key}" />
+                            </items>
+                        </Select>
+                    </VBox>
+                    </HBox> -->
+                    <HBox class='settingsHBox'>
+                    <VBox width="350px">
+                    				<Label text = 'Plant Location' design="Bold" class='settingsLabel'></Label>
+                <ComboBox
+														id="PlantCB"
+						   								items="{
+															path: 'plantCodes>/',
+															sorter: { path: 'plantCodes>NAME' }
+														}"
+														required="true"
+														change="changePlantCode">
+														<core:Item key="{plantCodes>WERKS}" text="{plantCodes>NAME}" />
+													</ComboBox>
+                </VBox>
+                    </HBox>
+                </content>
+            </Panel>
+        </layout:fixContent>
+        <layout:flexContent>
+            <viz:Popover id="idPopOver"></viz:Popover>
+            
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='bar'>
+                <viz:dataset>
+                    <viz.data:FlattenedDataset id="flatdataset" data="{products1>/results}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="products1"
+                                value="{products1>ProductDesc}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Available Quantity"
+                                value="{products1>StockQAvailable}" />
+                            <viz.data:MeasureDefinition name="ReOrder Point"
+                                value="{products1>ReorderPoint}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure"
+                        values="Available Quantity" />
+                        <viz.feeds:FeedItem uid="valueAxis" type="Measure"
+                        values="ReOrder Point" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+                        values="products1" />
+                    
+                </viz:feeds>
+            </viz:VizFrame>
+        </layout:flexContent>
+    </layout:FixFlex>
+
+  </content>
+	</Page>
+</mvc:View>

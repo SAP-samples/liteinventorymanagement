@@ -1,0 +1,247 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:tnt="sap.tnt"
+	xmlns:plugins="sap.ui.table.plugins"
+	controllerName="com.sap.pgp.dev.inventory.controller.home.GoodsIssue"
+	height="100%">
+	<m:Page title="Goods Issue"
+            class="sapUiContentPadding"
+            backgroundDesign="Transparent"
+            showHeader="true"
+            showNavButton="true"
+            navButtonPress="onNavBack">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" > 
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+						<expandedHeading>
+							<m:Title text="Deliver Goods to Requester" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</expandedHeading>
+						<actions>
+							<m:Button
+							        id="sbutton"
+									text="Issue Goods"
+									type="Emphasized"
+									press="OnPressSave"
+									visible = "true"/>
+							<m:Button
+							        id="cbutton"
+									text="Cancel"
+									type="Emphasized"
+									press="OnPressCancel"
+									visible = "true"/>
+							<m:Button
+									icon="sap-icon://action"
+									type="Transparent"/>
+						</actions> 
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Goods Issue">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<f:Form id="frmRequisition" editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout
+										labelSpanXL="4"
+										labelSpanL="4"
+										labelSpanM="12"
+										labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="0"
+										emptySpanL="0"
+										emptySpanM="0"
+										emptySpanS="0"
+										columnsXL="2"
+										columnsL="2"
+										columnsM="1"
+										singleContainerFullSize="false" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer title="">
+										<f:formElements>
+
+											<f:FormElement id="Employeefe" visible="true">
+												<f:label>
+													<m:Label
+														text="Requestor ID"
+														required="true"/>
+												</f:label>
+												<f:fields>
+<m:Input
+			id="employeeInput"
+			textFormatMode="KeyValue"
+			placeholder="Enter Employee ID"
+			showSuggestion="true"
+			showValueHelp="true"
+			valueHelpRequest=".onValueHelpRequest1"
+			suggestionItems="{Employee>/EmployeeCollection}"
+			suggestionItemSelected=".onSuggestionItemSelected1">
+			<m:suggestionItems>
+				<core:ListItem
+					key="{Employee>EmployeeID}"
+					text="{Employee>Name}"
+					additionalText="{Employee>EmployeeID}" />
+			</m:suggestionItems>
+		</m:Input>
+		<m:Text id="selectedKeyIndicator1" />
+
+												</f:fields>
+											</f:FormElement>
+												
+											<f:FormElement id="CCode" visible="true"> 
+												<f:label>
+													<m:Label
+														text="Company Code"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:ComboBox
+														id="CCodeCB"
+														placeholder="Entity to charge"
+														items="{
+															path: 'compCodes>/',
+															sorter: { path: 'compCodes>BUTXT' }
+														}"
+														required="true"
+														change="changeCompCode">
+														<core:Item key="{compCodes>BUKRS}" text="{compCodes>BUTXT}" />
+													</m:ComboBox>
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="CC1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Cost Center"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="CostCC"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="Cost Center to Charge" />
+												</f:fields>
+											</f:FormElement>
+
+											<f:FormElement id="Requisition" visible="true">
+												<f:label>
+													<m:Label
+														text="Requisition"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="Requisition1"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="SAP Ariba Requisition #" />
+												</f:fields>
+											</f:FormElement>
+											<f:FormElement id="GL1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default GL Account"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="GLAccount1"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="GL to Charge upon Issue" />
+												</f:fields>
+											</f:FormElement>
+
+											<f:FormElement id="LocationFE1" visible="true">
+												<f:label>
+													<m:Label
+														text="Default Location"
+														required="true"/>
+												</f:label>
+												<f:fields>
+												  <m:ComboBox
+														id="LocationCB"
+														placeholder="Deliver from Location"
+														items="{
+															path: 'plantsModel>/',
+															sorter: { path: 'plantsModel>NAME' }
+														}"
+														required="true"
+														change="changePlantCode">
+														<core:Item key="{plantsModel>WERKS}" text="{plantsModel>NAME}" />
+													</m:ComboBox>
+												</f:fields>
+											</f:FormElement>
+
+											<f:FormElement id="Productfe" visible="true">
+												<f:label>
+													<m:Label
+														text="Product"
+														required="true"/>
+												</f:label>
+												<f:fields>
+											<m:Input
+														id="productInput"
+														textFormatMode="KeyValue"
+														placeholder="Enter product"
+														showSuggestion="true"
+														showValueHelp="true"
+														valueHelpRequest=".onValueHelpRequest"
+														suggestionItems="{products1>/results}"
+														suggestionItemSelected=".onSuggestionItemSelected">
+														<m:suggestionItems>
+															<core:ListItem
+																key="{products1>ProductId}"
+																text="{products1>ProductDesc}"
+																additionalText="{products1>ProductId}" />
+														</m:suggestionItems>
+													</m:Input>
+													<m:Text id="selectedKeyIndicator" />
+
+												</f:fields>
+											</f:FormElement>
+
+										<f:FormElement id="Quantityfe" visible="true">
+												<f:label>
+													<m:Label
+														text="Quantity"
+														required="true"/>
+												</f:label>
+												<f:fields>
+													<m:Input
+														id="Quantity"
+														type="Text"
+														editable ="true"
+														change= "onChange"
+														placeholder="Quantity Issued to Requester" />
+												</f:fields>
+											</f:FormElement>
+
+
+
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+		</sections>
+	</ObjectPageLayout>
+	<layout:HorizontalLayout id="staticContentLayout">
+	</layout:HorizontalLayout>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,45 @@
+{
+	"items": [
+		{
+			"src": "sap-icon://key-user-settings",
+			"id": "UserProfile",
+			"title": "Inventory Manager Profile",
+			"subTitle": "Inventory Manager Profile"
+		},
+		{
+			"src": "sap-icon://business-objects-experience",
+			"id": "Analytics",
+			"title": "Inventory Report",
+			"subTitle": "Inventory Report"
+		},
+		{
+			"src": "sap-icon://upload",
+			"id": "FileUpload",
+			"title": "Upload Inventory Data",
+			"subTitle": "Upload Inventory Data"
+		},
+		{
+			"src": "sap-icon://shipping-status",
+			"id": "Goods Issue",
+			"title": "Goods Issue",
+			"subTitle": "Goods Issue"
+		},
+		{
+			"src": "sap-icon://cart-full",
+			"id": "Re-Order Requisitions",
+			"title": "SAP Ariba Requisition",
+			"subTitle": "Re-Order Status"
+		},
+		{
+			"src": "sap-icon://receipt",
+			"id": "Goods Receipt",
+			"title": "Goods Receipt",
+			"subTitle": "Goods Receipt by Product"
+		},
+		{
+			"src": "sap-icon://shipping-status",
+			"id": "New Goods Issue",
+			"title": "New Goods Issue",
+			"subTitle": "Goods Issue by PR"	}
+	]
+}

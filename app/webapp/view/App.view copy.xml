@@ -1,0 +1,31 @@
+<mvc:View xmlns="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	displayBlock="true"
+	controllerName="com.sap.pgp.dev.inventory.controller.App"
+	height="100%">
+	<m:Page>
+		<m:customHeader>
+			<ShellBar
+					title="Lightweight Inventory Application"
+					  homeIcon="https://sapui5.hana.ondemand.com/resources/sap/ui/documentation/sdk/images/logo_sap.png"
+					  showCopilot="false"
+					  showSearch="true"
+					  showNotifications="false"
+					  showProductSwitcher="true"
+					  showNavButton="{= ${/layout} === 'EndColumnFullScreen'}"
+					  notificationsNumber="2"
+					  navButtonPressed="handleBackButtonPressed"
+			>
+
+				<profile>
+					<Avatar initials="UI"/>
+				</profile>
+			</ShellBar>
+		</m:customHeader>
+		<!-- <m:App id="app" stateChange="onStateChanged" layout="{/layout}" backgroundDesign="Solid"/> -->
+		<m:App>
+		<FlexibleColumnLayout id="app" layout="{app>/layout}" />
+		</m:App>
+	</m:Page>
+</mvc:View>

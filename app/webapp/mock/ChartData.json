@@ -1,0 +1,19 @@
+{
+	"Temperatures": [
+		{
+			"id": "Apple iPhone 7 256 GB",
+			"ReOrderPoint": 7,
+			"QtyAvailable": 50
+		},
+		{
+			"id": "Apple iPhone 8 256 GB",
+			"ReOrderPoint": 5,
+			"QtyAvailable": 60
+		},
+		{
+			"id": "Samsung Galaxy",
+			"ReOrderPoint": 5,
+			"QtyAvailable": 70
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+    "extends": ["eslint:recommended", "prettier"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jest": true,
+        "jquery": true // enable jquery global variables
+    },
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "plugins": ["babel", "prettier"],
+    "globals": {
+        "SELECT": true,
+        "INSERT": true,
+        "UPDATE": true,
+        "DELETE": true,
+        "CREATE": true,
+        "DROP": true,
+        "cds": true,
+        "ui5": false,
+        "sap": false,
+        "moment": false
+    },
+    "rules": {
+        "no-console": "off",
+        "require-atomic-updates": "off"
+    }
+}

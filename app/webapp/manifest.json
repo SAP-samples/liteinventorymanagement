@@ -1,0 +1,280 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "com.sap.pgp.dev.inventory",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/backend/v2/inventory/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach",
+    "sourceTemplate": {
+      "id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+      "version": "1.40.12"
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "com.sap.pgp.dev.inventory.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.65.6",
+      "libs": {
+				"sap.ui.core": {
+				},
+				"sap.m": {
+				},
+				"sap.f": {
+				},
+				"sap.ui.layout": {
+				},
+				"sap.uxap": {
+				}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.sap.pgp.dev.inventory.i18n.i18n"
+        }
+      },
+      "plantsModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "./mock/plants.json"
+      },
+      "compCodes": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "./mock/companycodes.json"
+      },
+      "Employee": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "./mock/Employee.json"
+			},
+      "products": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": true,
+          "metadataUrlParams": {
+            "sap-value-list": "none"
+          }
+        }
+      }
+    },
+    "resources": {
+      "css": [{
+        "uri": "css/style.css"
+      }]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.sap.pgp.dev.inventory.view",
+        "controlId": "app",
+        "transition": "slide",
+        "clearControlAggregation": false,
+        "bypassed": {
+        },
+        "async": true
+      },
+      "routes": {
+        "Home": {
+          "pattern": "",
+          "layout": "OneColumn",
+          "name":"Home",
+          "target": [
+						"Home"
+					]
+        },
+        "InventoryDetails": {
+          "pattern": "InventoryDetails/{product}/{layout}",
+          "layout": "TwoColumnsMidExpanded",
+          "name":"InventoryDetails",
+          "target": [
+            "InventoryDetails",
+            "Home"
+          ]
+        },
+        "InventoryDetailDetail": {
+          "pattern": "InventoryDetailDetail/{product}/{supplier}/{layout}",
+          "layout": "ThreeColumnsEndExpanded",
+          "name":"InventoryDetailDetail",
+          "target": [
+            "InventoryDetails",
+            "Home",
+            "InventoryDetailDetail"
+          ]
+        },
+        "ReportDetail": {
+          "pattern": "ReportDetail",
+          "layout": "OneColumn",
+          "name":"ReportDetail",
+          "target": [
+            "ReportDetail"
+          ]
+        },
+        "ReportDetail1": {
+          "pattern": "ReportDetail1",
+          "layout": "OneColumn",
+          "name":"ReportDetail1",
+          "target": [
+            "ReportDetail1"
+          ]
+        },
+        "ReportDetail2": {
+          "pattern": "ReportDetail2",
+          "layout": "OneColumn",
+          "name":"ReportDetail2",
+          "target": [
+            "ReportDetail2"
+          ]
+        },
+        "UserDetail": {
+          "pattern": "UserDetail",
+          "layout": "OneColumn",
+          "name":"UserDetail",
+          "target": [
+            "UserDetail"
+          ]
+        },
+        "FileUpload": {
+          "pattern": "FileUpload",
+          "layout": "OneColumn",
+          "name":"FileUpload",
+          "target": [
+            "FileUpload"
+          ]
+        },
+        "GoodsIssue": {
+          "pattern": "GoodsIssue",
+          "layout": "OneColumn",
+          "name":"GoodsIssue",
+          "target": [
+            "GoodsIssue"
+          ]
+        },
+        "PRGoodsIssue": {
+          "pattern": "PRGoodsIssue",
+          "layout": "OneColumn",
+          "name":"PRGoodsIssue",
+          "target": [
+            "PRGoodsIssue"
+          ]
+        },
+        "GoodsReceipt": {
+          "pattern": "GoodsReceipt",
+          "layout": "OneColumn",
+          "name":"GoodsReceipt",
+          "target": [
+            "GoodsReceipt"
+          ]
+        },
+        "RequisitionDetails": {
+          "pattern": "RequisitionDetails",
+          "layout": "OneColumn",
+          "name":"RequisitionDetails",
+          "target": [
+            "RequisitionDetails"
+          ]
+        }
+      },
+      "targets": {
+        "Home": {
+          "viewName": "home/Overview",
+          "controlAggregation": "beginColumnPages"
+          
+        },
+        "InventoryDetails": {
+          "viewName": "home/InventoryDetails",
+          "controlAggregation": "midColumnPages"
+         
+        },
+        "InventoryDetailDetail": {
+          "viewName": "home/InventoryDetailDetail",
+          "controlAggregation": "endColumnPages"
+         
+        },
+        "ReportDetail": {
+          "viewName": "home/ReportDetail",
+          "controlAggregation": "beginColumnPages"
+        },
+        "ReportDetail1": {
+          "viewName": "home/ReportDetail1",
+          "controlAggregation": "beginColumnPages"
+        },
+        "ReportDetail2": {
+          "viewName": "home/ReportDetail2",
+          "controlAggregation": "beginColumnPages"
+        },
+        "UserDetail": {
+          "viewName": "home/UserDetail",
+          "controlAggregation": "beginColumnPages"
+        },
+        "FileUpload": {
+          "viewName": "home/FileUpload",
+          "controlAggregation": "beginColumnPages"
+        },
+        "GoodsIssue": {
+          "viewName": "home/GoodsIssue",
+          "controlAggregation": "beginColumnPages"
+        },
+        "PRGoodsIssue": {
+          "viewName": "home/PRGoodsIssue",
+          "controlAggregation": "beginColumnPages"
+        },
+        "RequisitionDetails": {
+          "viewName": "home/RequisitionDetails",
+          "controlAggregation": "beginColumnPages"
+        },
+        "GoodsReceipt": {
+          "viewName": "home/GoodsReceipt",
+          "controlAggregation": "beginColumnPages"
+        }
+      }
+    }
+  }
+}

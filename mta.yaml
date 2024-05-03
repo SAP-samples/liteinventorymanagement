@@ -1,0 +1,119 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = inventory
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: inventory
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+# --------------------- FRONTEND MODULE ------------------------
+ - name: Inventory
+# --------------------------------------------------------------
+   type: html5
+   path: app/
+   parameters:
+     disk-quota: 512M
+     memory: 512M
+   build-parameters:
+     ignore: ["node_modules/"]  
+     builder: custom
+     commands:
+        - ui5 build
+   requires:
+    # Resources extracted from CAP configuration
+    - name: inventory-hdi
+    - name: inventory_xsuaa
+    - name: inventory_destination
+    - name: inventory_connectivity
+    # - name: backend 
+    #   group: destinations
+    #   properties:
+    #     name: backend
+    #     url: ~{url}
+    #     forwardAuthToken: true 
+
+ # --------------------- SERVER MODULE ------------------------
+ - name: inventory-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   provides:
+    - name: backend      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+   requires:
+    # Resources extracted from CAP configuration
+    - name: inventory-hdi
+    - name: inventory_xsuaa
+    - name: inventory_destination
+    - name: inventory_connectivity
+
+ # --------------------- DB MODULE ------------------------
+ - name: inventory-db
+ # ------------------------------------------------------------
+   type: hdb
+   path: gen/db  
+   parameters:
+     app-name: inventory-db
+   build-parameters:
+     ignore: ["node_modules/"]  
+   requires:
+    # 'hana' and 'xsuaa' resources extracted from CAP configuration
+    - name: inventory-hdi
+    - name: inventory_xsuaa
+
+resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: inventory-hdi
+# ------------------------------------------------------------
+   type: com.sap.xs.hdi-container
+   parameters:
+     service: hana  # or 'hanatrial' on trial landscapes
+     service-plan: hdi-shared
+   properties:
+     hdi-service-name: ${service-name}
+
+# ------------------------------------------------------------
+ - name: inventory_xsuaa
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: xsuaa
+     service-plan: application  
+     config:
+       xsappname: inventory-${space}    #  name + space dependency
+       tenant-mode: dedicated
+     ##  path to xs-security.json to add roles and scopes
+     #path: config/xs-security.json
+       ## or inline definition
+       # scopes:
+       # - name: $XSAPPNAME...
+
+# ------------------------------------------------------------
+ - name: inventory_destination
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: lite
+     service: destination
+
+# ------------------------------------------------------------
+ - name: inventory_connectivity
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service-plan: lite
+     service: connectivity

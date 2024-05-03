@@ -1,0 +1,229 @@
+<mvc:View
+	controllerName="com.sap.pgp.dev.inventory.controller.home.PRGoodsIssue"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.f"
+	xmlns:x="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	height="100%">
+
+		<m:Page title="Goods Issue"
+            class="sapUiContentPadding"
+            backgroundDesign="Transparent"
+            showHeader="true"
+            showNavButton="true"
+            navButtonPress="onNavBack">
+
+	<m:VBox visible = "true">
+		<m:Panel headerText="Requisitions Open for Goods Issue">
+			<m:FlexBox
+				height="300px"
+				alignItems="Start"
+				justifyContent="Start">
+
+			<Table id="table1"
+				rows="{products1>/results}"
+				selectionMode="Single"
+				rowActionCount="1"
+				visibleRowCount="7"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar>
+						<m:ToolbarSpacer/>
+						<m:SearchField search="onSearch" width="17.5rem"/>
+					</m:OverflowToolbar>
+				</extension>
+
+				<columns>
+					<Column width="10rem">
+						<m:Label text="PR Number" />
+						<template>
+							<m:Text text="{products1>PRID}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="PR Item" />
+						<template>
+							<m:Text text="{products1>PRItem}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="15rem">
+						<m:Label text="Requester" />
+						<template>
+							<m:Text text="{products1>Requester}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="10rem">
+						<m:Label text="Company Code" />
+						<template>
+							<m:Text text="{products1>CompanyCode}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Cost Center" />
+						<template>
+							<m:Text text="{products1>CostCenter}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="GL Account" />
+						<template>
+							<m:Text text="{products1>GLAccount}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="10rem">
+						<m:Label text="Location" />
+						<template>
+							<m:Text text="{products1>Location}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="12rem">
+						<m:Label text="Product Id" />
+						<template>
+							<m:Text text="{products1>ProductId}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="15rem">
+						<m:Label text="Product Description" />
+						<template>
+							<m:Text text="{products1>ProductDesc}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="5rem">
+						<m:Label text="Quantity" />
+						<template>
+							<m:Text text="{products1>Quantity}" wrapping="false" />
+						</template>
+					</Column>
+				   <Column width="4rem">
+						<m:Label text="UOM" />
+						<template>
+							<m:Text text="{products1>UOM}" wrapping="false" />
+						</template>
+					</Column>
+				</columns>
+
+	<rowActionTemplate>
+        <RowAction>
+            <items>
+		<RowActionItem type="Navigation" press="onDetailsPress" icon="sap-icon://feeder-arrow"></RowActionItem>
+	    </items>
+	</RowAction>
+     </rowActionTemplate>
+
+			</Table>
+	</m:FlexBox>
+		</m:Panel>
+
+		<m:Panel headerText="Product Details" id="pproductinfo" visible = "false">
+			<m:FlexBox
+				height="300px"
+				alignItems="Center"
+				justifyContent="Start">
+						<f:Avatar id = "image"
+								  showBorder ="false"
+								  displaySize ="XL"
+								  displayShape="Square"
+								  imageFitType="Contain"
+								  >
+						</f:Avatar>
+						<form:Form id="frmRequisition" editable="true" visible="true">
+						<form:layout>
+						<form:ResponsiveGridLayout/>
+								</form:layout>
+								<form:formContainers>
+									<form:FormContainer title="">
+										<form:formElements>
+											<form:FormElement id="feprodid" visible="true">
+												<form:label>
+													<m:Label
+														text="Product ID"
+														/>
+												</form:label>
+												<form:fields>
+													<m:Text id="TXProductID2"/>
+												</form:fields>
+											</form:FormElement>
+
+										  	<form:FormElement id="feproddesc" visible="true">
+												<form:label>
+													<m:Label
+														text="Product Description"
+														/>
+												</form:label>
+												<form:fields>
+													<m:Text id="TXProductdesc"/>
+												</form:fields>
+											</form:FormElement>
+
+										  	<form:FormElement id="feLocation" visible="true">
+												<form:label>
+													<m:Label
+														text="Location"
+														/>
+												</form:label>
+												<form:fields>
+													<m:Text id="TXLocation"/>
+												</form:fields>
+											</form:FormElement>
+
+										  	<form:FormElement id="festock" visible="true">
+												<form:label>
+													<m:Label
+														text="Available Stock"
+														/>
+												</form:label>
+												<form:fields>
+													<m:Text id="TXstock"/>
+												</form:fields>
+											</form:FormElement>
+
+											<!-- <form:FormElement id="fetxtvalues" visible="false">
+												<form:label>
+													<m:Label
+														text="givalues" visible = "false"
+														/>
+												</form:label>
+												<form:fields>
+													<m:Text id="TXLOCATIONID" visible = "false" />
+													<m:Text id="TXCOSTCENTERID" visible = "false" />
+													<m:Text id="TXPRNO" visible = "false" />
+													<m:Text id="TXGLACCOUNT" visible = "false" />
+													<m:Text id="TXEMPLOYEEID" visible = "false" />
+													<m:Text id="TXQUANTITY" visible = "false" />
+													<m:Text id="TXCOMPANYCODE" visible = "false" />
+													<m:Text id="TXPRItem" visible = "false" />
+													
+												</form:fields>
+											</form:FormElement> -->
+
+								
+								
+								
+									</form:formElements>
+									</form:FormContainer>
+								</form:formContainers>
+							</form:Form>
+
+	
+			</m:FlexBox>
+			</m:Panel>
+
+		<m:Panel id="pgi" visible ="false">
+			<m:FlexBox
+				height="100px"
+				alignItems="Center"
+				justifyContent="Center">
+		     <m:Button text="Post Goods Issue" press="OnPressSave" type="Emphasized" width="100%" />	
+			</m:FlexBox>
+			</m:Panel>
+
+
+			</m:VBox>
+
+				</m:Page>
+				
+</mvc:View>
