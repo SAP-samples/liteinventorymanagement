@@ -9,7 +9,7 @@
   "dependencies": {
     "@sap/approuter": "6.8.0",
     "@sap/audit-logging": "^3.1.0",
-    "passport": "^0.4.1"
+    "passport": "^0.6.0"
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
