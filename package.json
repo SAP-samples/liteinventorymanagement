@@ -11,7 +11,6 @@
     "@sap/cds": "^4",
     "@sap/cds-odata-v2-adapter-proxy": "^1.4.47",
     "@sap/hana-client": "^2.5.109",
-    "@sap/xssec": "^3.0.9",
     "concurrently": "^5.3.0",
     "express": "^4"
   },
